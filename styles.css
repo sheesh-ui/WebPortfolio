@@ -1,0 +1,168 @@
+/* Base Styles */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Anime-inspired Elements */
+.anime-border {
+    position: relative;
+}
+
+.anime-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Certificate Cards */
+.certificate-card {
+    transition: all 0.3s ease;
+    perspective: 1000px;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.certificate-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.certificate-card:hover .certificate-card-inner {
+    transform: rotateY(10deg);
+}
+
+/* Hobby Cards */
+.hobby-card {
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.hobby-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(30deg);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover::before {
+    transform: rotate(30deg) translate(10%, 10%);
+}
+
+/* Skill Bars */
+.skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    border-radius: 4px;
+    position: relative;
+    animation: progressAnimation 2s ease-in-out forwards;
+}
+
+@keyframes progressAnimation {
+    from { width: 0; }
+}
+
+/* Floating Elements */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* New Picture Section Styles */
+#picture {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .certificate-card:hover .certificate-card-inner {
+        transform: none;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff6600;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffcc00;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
